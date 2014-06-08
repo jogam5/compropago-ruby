@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Compropago::VERSION
   spec.authors       = ["Jose Gabriel"]
   spec.email         = ["soporte@compropago.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Ruby gem for making calls to ComproPago API}
+  spec.summary       = %q{Ruby bindings for ComproPago}
   spec.homepage      = "http://compropago.com"
   spec.license       = "MIT"
 
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  spec.add_dependency 'net/https'
+  spec.add_dependency 'uri'
 end
