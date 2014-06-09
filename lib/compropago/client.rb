@@ -21,7 +21,7 @@ module Compropago
   	  #  "image_url" => nil
   	  #}
 
-  	  options = defaults.merge(options)
+  	  #options = defaults.merge(options)
 
   	  uri = URI.parse(BASE_URI+'/charges')
   	  http = Net::HTTP.new(uri.host, uri.port)
