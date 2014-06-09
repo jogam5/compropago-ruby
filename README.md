@@ -51,6 +51,14 @@ Verify a charge previously made.
 
     compropago.verify_charge 'b75076ac-a94b-478a-945c-c2caf85be668'
 
+### SMS payment instructions
+
+Send payment instructions over SMS.
+
+	# send_payment_instructions payment_id, customer_phone, customer_company_phone
+
+    compropago.verify_charge 'b75076ac-a94b-478a-945c-c2caf85be668', '2221515805', 'TELCEL'
+
 ## Contributing
 
 1. Fork it
