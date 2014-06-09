@@ -32,7 +32,7 @@ module Compropago
   	  			 "product_name" => product_name,
   	  			 "customer_name" => customer_name,
   	  			 "customer_email" => customer_email,
-  	  			 "payment_type" => payment_type
+  	  			 "payment_type" => payment_type,
   	  			 "product_id" => product_id,
   	  			 "image_url" => image_url,
   	  			 "product_id" => options[:product_id],
