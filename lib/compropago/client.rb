@@ -16,13 +16,6 @@ module Compropago
 
   	def create_charge product_price, product_name, customer_name, customer_email, payment_type, product_id=nil, image_url=nil
   	  
-  	  #defaults = {
-  	  #  "product_id" => nil,
-  	  #  "image_url" => nil
-  	  #}
-
-  	  #options = defaults.merge(options)
-
   	  uri = URI.parse(BASE_URI+'/charges')
   	  http = Net::HTTP.new(uri.host, uri.port)
   	  http.use_ssl = true
@@ -40,7 +33,6 @@ module Compropago
   	  		  }
   	  request.set_form_data(params)
   	  response = http.request(request)
-  	  #render :json => response.body
   	end
   end
 end

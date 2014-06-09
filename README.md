@@ -20,9 +20,9 @@ Or install it yourself as:
 
 ### Authentication
 
-We encourage you to set your API keys in an environment variable rather than hardcoding your API keys instead.
+We encourage you to set your API keys in an environment variable instead of hardcoding your API keys.
 
-    compropago = ComproPago::Client.new(ENV['COMPROPAGO_API_KEY'])
+    compropago = Compropago::Client.new(ENV['COMPROPAGO_API_KEY'])
 
 Once you have created an instance, you can call the methods described in the <a href="http://compropago.com/documentacion/api">api reference</a> on it.
 
@@ -31,13 +31,13 @@ Once you have created an instance, you can call the methods described in the <a 
 
 ### Create a charge
 
-Creating a charge using the required params.
+Creating a charge using only the required params <code>product_price</code>, <code>product_name</code>, <code>customer_name</code>, <code>customer_email</code>, <code>payment_type</code>.
 	
 	# create_charge product_price, product_name, customer_name, customer_email, payment_type
 
     compropago.create_charge 3150.0, 'iphone5s', 'Irma Sanz', 'no-replay@compropago.com', 'OXXO'
 
-Creating a charge using the required and also the optional ones: <code>product_id</code> and <code>image_url</code>.
+Adding the optional params <code>product_id</code> and <code>image_url</code> to the request:
 
     # create_charge product_price, product_name, customer_name, customer_email, payment_type, product_id, image_url
 
