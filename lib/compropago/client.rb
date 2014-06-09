@@ -14,12 +14,12 @@ module Compropago
   	  @base_uri = options[:base_uri]	
   	end
 
-  	def create_charge product_price, product_name, customer_name, customer_email, payment_type, options={}
+  	def create_charge product_price, product_name, customer_name, customer_email, payment_type, product_id=nil, image_url=nil
   	  
-  	  defaults = {
-  	    "product_id" => nil,
-  	    "image_url" => nil
-  	  }
+  	  #defaults = {
+  	  #  "product_id" => nil,
+  	  #  "image_url" => nil
+  	  #}
 
   	  options = defaults.merge(options)
 
@@ -35,8 +35,8 @@ module Compropago
   	  			 "payment_type" => payment_type,
   	  			 "product_id" => product_id,
   	  			 "image_url" => image_url,
-  	  			 "product_id" => options[:product_id],
-  	    		 "image_url" => options[:image_url]
+  	  			 "product_id" => product_id,
+  	    		 "image_url" => image_url
   	  		  }
   	  request.set_form_data(params)
   	  response = http.request(request)
