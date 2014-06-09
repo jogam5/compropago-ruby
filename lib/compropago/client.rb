@@ -19,6 +19,7 @@ module Compropago
   	  uri = URI.parse(BASE_URI+'/charges')
   	  http = Net::HTTP.new(uri.host, uri.port)
   	  http.use_ssl = true
+  	  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   	  request = Net::HTTP::Post.new(uri.request_uri)
   	  request.basic_auth @api_key, ''
   	  params = { "product_price" => product_price,
@@ -33,6 +34,18 @@ module Compropago
   	  		  }
   	  request.set_form_data(params)
   	  response = http.request(request)
+  	end
+
+  	def verify_charge payment_id
+  	  uri = URI.parse(BASE_URI+'/charges/'+payment_id)
+  	  http = Net::HTTP.new(uri.host, uri.port)
+  	  http.use_ssl = true
+  	  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  	  request = Net::HTTP::Get.new(uri.request_uri)
+  	  request.basic_auth @api_key, ''
+
+  	  response = http.request(request)
+  	  puts response.body
   	end
   end
 end
