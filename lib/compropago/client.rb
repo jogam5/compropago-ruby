@@ -40,7 +40,7 @@ module Compropago
   	  		  }
   	  request.set_form_data(params)
   	  response = http.request(request)
-  	  render :json => response.body
+  	  #render :json => response.body
   	end
   end
 end
