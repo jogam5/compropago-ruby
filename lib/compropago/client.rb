@@ -14,8 +14,7 @@ module Compropago
   	  @base_uri = options[:base_uri]	
   	end
 
-  	def create_charge product_price, product_name, customer_name, customer_email, payment_type, product_id=nil, image_url=nil
-  	  
+  	def create_charge product_price, product_name, customer_name, customer_email, payment_type, product_id=nil, image_url=nil 
   	  uri = URI.parse(BASE_URI+'/charges')
   	  http = Net::HTTP.new(uri.host, uri.port)
   	  http.use_ssl = true
@@ -43,7 +42,21 @@ module Compropago
   	  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   	  request = Net::HTTP::Get.new(uri.request_uri)
   	  request.basic_auth @api_key, ''
+  	  response = http.request(request)
+  	end
 
+  	def send_payment_instructions payment_id, customer_phone, customer_company_phone
+  	  uri = URI.parse(BASE_URI+'/charges/'+payment_id.to_s+'/sms')
+  	  http = Net::HTTP.new(uri.host, uri.port)
+  	  http.use_ssl = true
+  	  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  	  request = Net::HTTP::Post.new(uri.request_uri)
+  	  request.basic_auth @api_key, ''
+  	  params = { "payment_id" => payment_id.to_s,
+  	  			 "customer_phone" => customer_phone.to_s,
+  	  			 "customer_company_phone" => customer_company_phone
+  	  		   }
+  	  request.set_form_data(params)
   	  response = http.request(request)
   	end
   end

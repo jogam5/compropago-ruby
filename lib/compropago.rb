@@ -9,7 +9,5 @@ require 'compropago/version'
 require 'compropago/client'
 
 module Compropago
-  # Your code goes here...
-  #@api_base = 'https://api.compropago.com'
 
 end
