@@ -5,9 +5,6 @@ require 'uri'
 # Version
 require 'compropago/version'
 
-# API operations
-require 'compropago/api_operations/create'
-
 # Resources
 require 'compropago/client'
 

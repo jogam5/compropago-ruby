@@ -1,7 +1,5 @@
 # Compropago
 
-ComproPago is the largest cash payments platform in Mexico.
-
 This gem helps you integrate ComproPago's API to your ruby app.
 
 ## Installation
@@ -20,7 +18,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Authentication
+
+We encourage you to set your API keys in an environment variable rather than hardcoding your API keys instead.
+
+    compropago = ComproPago::Client.new(ENV['COMPROPAGO_API_KEY'])
+
+Once you have created an instance, you can call the methods described in the <a href="http://compropago.com/documentacion/api">api reference</a> on <code>compropago</code>.
+
+
+## Examples
+
+### Create a charge
+
+Creating a charge using the required params.
+
+    compropago.create_charge 3150.0, 'iphone5s', 'Irma Sanz', 'no-replay@compropago.com', 'OXXO'
+
+Creating a charge using both the required and the optional params.
+
+    compropago.create_charge 3150.0, 'iphone5s', 'Irma Sanz', 'no-replay@email.com', 'OXXO', '5ku8g', 'image.jpg'
 
 ## Contributing
 
