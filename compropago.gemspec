@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_dependency 'net/https'
-  spec.add_dependency 'uri'
+  #spec.add_dependency 'uri'
 end
