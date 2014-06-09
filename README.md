@@ -37,7 +37,7 @@ Creating a charge using the required params.
 
     compropago.create_charge 3150.0, 'iphone5s', 'Irma Sanz', 'no-replay@compropago.com', 'OXXO'
 
-Creating a charge using both the required and the optional params <code>product_id</code> and <code>image_url</code>.
+Creating a charge using the required and also the optional ones: <code>product_id</code> and <code>image_url</code>.
 
     # create_charge product_price, product_name, customer_name, customer_email, payment_type, product_id, image_url
 
