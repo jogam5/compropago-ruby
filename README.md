@@ -43,6 +43,14 @@ Adding the optional params <code>product_id</code> and <code>image_url</code> to
 
     compropago.create_charge 3150.0, 'iphone5s', 'Irma Sanz', 'no-replay@email.com', 'OXXO', '5ku8g', 'image.jpg'
 
+### Verify a charge
+
+Verify a charge previously made.
+
+	# verify_charge payment_id
+
+    compropago.verify_charge 'b75076ac-a94b-478a-945c-c2caf85be668'
+
 ## Contributing
 
 1. Fork it

@@ -45,7 +45,6 @@ module Compropago
   	  request.basic_auth @api_key, ''
 
   	  response = http.request(request)
-  	  puts response.body
   	end
   end
 end
